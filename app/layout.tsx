@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
 
-const siteUrl = "https://dineth14.github.io/dineth-portfolio/";
+const siteUrl = "https://dineth14.github.io/Research_portfolio/";
 
 export const metadata: Metadata = {
   title: "Dineth Perera | Research Portfolio",
