@@ -1,6 +1,6 @@
 import { ContactDetails, LinkItem, ProfileContent } from "@/types/portfolio";
 
-const basePath = process.env.NODE_ENV === "production" ? "/dineth-portfolio" : "";
+const basePath = process.env.NODE_ENV === "production" ? "/Research_portfolio" : "";
 
 const links = {
   publications: {
