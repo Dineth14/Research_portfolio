@@ -1,4 +1,5 @@
 const isProduction = process.env.NODE_ENV === "production";
+const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "Research_portfolio";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -6,7 +7,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: isProduction ? "/dineth-portfolio" : "",
+  basePath: isProduction ? `/${repositoryName}` : "",
 };
 
 export default nextConfig;
