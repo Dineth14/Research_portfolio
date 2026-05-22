@@ -6,7 +6,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: isProduction ? "/Research_portfolio" : "",
+  basePath: isProduction ? "/dineth-portfolio" : "",
 };
 
 export default nextConfig;

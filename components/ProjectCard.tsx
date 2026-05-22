@@ -10,12 +10,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
     <article className="panel">
       <div className="project-meta">
         <span>{project.category}</span>
+        <span>{project.status}</span>
         {project.year ? <span>{project.year}</span> : null}
       </div>
       <h3>{project.title}</h3>
       <p className="project-description">{project.description}</p>
       <div className="tech-row" aria-label="Project technologies">
-        {project.tech.map((item) => (
+        {project.tags.map((item) => (
           <span key={item} className="tech-item">
             {item}
           </span>

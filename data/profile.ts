@@ -1,11 +1,12 @@
 import { ContactDetails, LinkItem, ProfileContent } from "@/types/portfolio";
 
-const basePath = process.env.NODE_ENV === "production" ? "/Research_portfolio" : "";
+const basePath = process.env.NODE_ENV === "production" ? "/dineth-portfolio" : "";
 
 const links = {
-  publications: {
-    label: "View Publications",
-    href: "#publications",
+  primaryCv: {
+    label: "Download CV",
+    href: `${basePath}/cv/Dineth_Perera_CV.pdf`,
+    download: true,
     variant: "primary",
   } satisfies LinkItem,
   cv: {
@@ -58,20 +59,17 @@ const links = {
 
 export const profile: ProfileContent = {
   name: "Dineth Perera",
-  headline:
-    "Electrical & Electronic Engineering Undergraduate | Remote-Sensing Computer Vision | Signal Processing",
+  headline: "Electrical & Electronic Engineering Undergraduate",
   subheadline:
-    "Third-year B.Sc. Engineering undergraduate at the University of Peradeniya, Sri Lanka, working on remote-sensing computer vision, visual state-space models, binary change detection, semantic segmentation, and signal-processing-based intelligent systems.",
-  photoSrc: `${basePath}/images/dineth-perera.jpg`,
+    "Research interests in computer vision, remote sensing, signal processing, generative AI, and medical imaging.",
   statusItems: [
     "University of Peradeniya",
-    "GPA: 3.74/4.00",
-    "Open to research internships",
+    "GPA: 3.70/4.00",
     "Sri Lanka",
+    "Open to research internships",
   ],
   heroLinks: [
-    links.publications,
-    links.cv,
+    links.primaryCv,
     links.googleScholarShort,
     links.github,
     links.huggingFace,
@@ -83,7 +81,6 @@ export const profile: ProfileContent = {
     links.github,
     links.huggingFace,
     links.arxiv,
-    links.linkedIn,
     links.email,
   ],
   footerLinks: [
@@ -99,8 +96,9 @@ export const profile: ProfileContent = {
     { label: "Research", href: "#research" },
     { label: "Publications", href: "#publications" },
     { label: "Projects", href: "#projects" },
+    { label: "Skills", href: "#skills" },
     { label: "Awards", href: "#awards" },
-    { label: "CV", href: "#cv" },
+    { label: "CV & Links", href: "#cv" },
     { label: "Contact", href: "#contact" },
   ],
   links,
@@ -108,88 +106,15 @@ export const profile: ProfileContent = {
 
 export const researchFocus = [
   {
-    title: "Remote-Sensing Computer Vision",
+    title: "Academic Focus",
     description:
-      "Semantic segmentation and change detection for aerial and satellite imagery, with emphasis on fair benchmarking, domain shift, and boundary quality.",
-  },
-  {
-    title: "Visual State-Space Models",
-    description:
-      "Evaluation and adaptation of visual SSM/Mamba-style backbones such as VMamba, MambaVision, and Spatial-Mamba for dense prediction tasks.",
-  },
-  {
-    title: "Binary Change Detection",
-    description:
-      "Developing MambaVision-based region-boundary temporal refinement methods for detecting land-cover and building changes from bi-temporal remote-sensing images.",
-  },
-  {
-    title: "Signal Processing & Field Sensing",
-    description:
-      "Signal acquisition, spectral analysis, filtering, vibration/infrasound analysis, and ML-based sensing systems for real-world engineering problems.",
-  },
-];
-
-export const ongoingResearch = [
-  {
-    title: "MambaRefine-CD",
-    status: "Manuscript / under review",
-    description:
-      "A MambaVision-based binary remote-sensing change detection architecture using shared-weight bi-temporal encoding, differential region-boundary interaction, adaptive multiscale decoding, and boundary residual refinement.",
-    points: [
-      "Shared-weight MambaVision encoder for pre-change and post-change images.",
-      "Differential feature construction using normalized bi-temporal features, absolute difference, and signed difference.",
-      "D-RBI module for region and boundary evidence separation.",
-      "Sobel-conditioned boundary gating.",
-      "ARF-FPN-style multiscale decoding.",
-      "Bounded residual refinement near uncertain boundaries.",
-      "Currently being evaluated with Precision, Recall, F1, IoU, OA, BF1, BIoU, and Trimap F1.",
-    ],
-  },
-  {
-    title: "Controlled Visual SSM Benchmarking for Remote-Sensing Segmentation",
-    status: "Accepted at IGARSS 2026",
-    description:
-      "Controlled benchmarking of VMamba, MambaVision, Spatial-Mamba, CNN, and Transformer baselines for semantic segmentation under fixed decoder and training settings.",
-    points: [
-      "Encoder-isolated comparison under a unified four-stage feature interface.",
-      "LoveDA and ISPRS Potsdam evaluation.",
-      "Domain-shift analysis across urban and rural scenes.",
-      "Boundary quality inspection alongside region-level accuracy.",
-      "Accuracy-efficiency trade-off analysis under fixed lightweight decoding.",
-    ],
-  },
-  {
-    title: "Infrasound-Based Elephant Detection",
-    status: "Developing",
-    description:
-      "Development of an infrasound-based elephant detection approach using low-frequency acoustic signals, spectral feature extraction, and ML classification for eventual embedded and field deployment.",
-    points: [
-      "Signal acquisition in the low-frequency acoustic regime.",
-      "Spectral feature extraction and filtering for noisy outdoor environments.",
-      "ML-based classification design for real-world deployment settings.",
-      "Embedded and field sensing considerations for eventual monitoring systems.",
-    ],
-  },
-];
-
-export const leadershipItems = [
-  {
-    title: "Central Link Toastmasters Club",
-    role: "Member, 2023-2026",
-    description:
-      "Developed technical communication, public speaking, and structured presentation skills through club participation.",
-  },
-  {
-    title: "Raceday.lk",
-    role: "Co-owner",
-    description:
-      "Co-owner of an online luxury car marketplace and community in Sri Lanka, with experience in digital presence, content, listings, and community building.",
+      "I am a third-year Electrical and Electronic Engineering undergraduate at the University of Peradeniya, Sri Lanka. My current work focuses on remote-sensing computer vision, especially binary change detection, semantic segmentation, visual state-space models, and dataset preparation for disaster and wildfire analysis. I am interested in research internships in computer vision, remote sensing, signal processing, generative AI, and medical imaging.",
   },
 ];
 
 export const contactDetails: ContactDetails = {
   description:
-    "For research internships, lab applications, collaborations, or technical discussions in computer vision, remote sensing, signal processing, or embedded AI, email is the most direct contact channel.",
+    "Email is the most direct contact channel for research internships, lab applications, and collaborations.",
   emailText: "e21291@eng.pdn.ac.lk",
   location: "Sri Lanka",
   primaryEmail: links.email,
@@ -198,7 +123,6 @@ export const contactDetails: ContactDetails = {
     links.huggingFace,
     links.googleScholarShort,
     links.arxiv,
-    links.portfolio,
     links.linkedIn,
   ],
 };

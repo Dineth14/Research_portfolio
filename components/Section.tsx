@@ -24,7 +24,7 @@ export function Section({
           <div className="section-text">
             <span className="eyebrow-label">{eyebrow}</span>
             <h2 id={`${id}-title`}>{title}</h2>
-            <p>{description}</p>
+            {description ? <p>{description}</p> : null}
           </div>
           {action ? <div className="section-action">{action}</div> : null}
         </div>

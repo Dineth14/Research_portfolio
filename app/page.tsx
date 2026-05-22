@@ -6,18 +6,18 @@ import { Hero } from "@/components/Hero";
 import { ProfileLinks } from "@/components/ProfileLinks";
 import { ProjectCard } from "@/components/ProjectCard";
 import { PublicationCard } from "@/components/PublicationCard";
+import { ResearchCard } from "@/components/ResearchCard";
 import { Section } from "@/components/Section";
 import { SkillGroup } from "@/components/SkillGroup";
 import { awards } from "@/data/awards";
 import {
   contactDetails,
-  leadershipItems,
-  ongoingResearch,
   profile,
   researchFocus,
 } from "@/data/profile";
 import { projects } from "@/data/projects";
 import { publications } from "@/data/publications";
+import { ongoingResearch } from "@/data/research";
 import { skillGroups } from "@/data/skills";
 
 export default function HomePage() {
@@ -28,15 +28,14 @@ export default function HomePage() {
         <Hero profile={profile} />
 
         <Section
-          id="research"
-          eyebrow="Research Focus"
-          title="Current Areas of Work"
-          description="Research experience in remote-sensing computer vision, visual state-space models, binary change detection, and signal-processing-based sensing systems."
+          id="about"
+          eyebrow="About"
+          title="About"
+          description=""
         >
-          <div className="card-grid focus-grid">
+          <div className="about-block">
             {researchFocus.map((item) => (
               <article key={item.title} className="panel">
-                <h3>{item.title}</h3>
                 <p>{item.description}</p>
               </article>
             ))}
@@ -44,10 +43,23 @@ export default function HomePage() {
         </Section>
 
         <Section
+          id="research"
+          eyebrow="Research"
+          title="Research & Current Work"
+          description="Current work across remote-sensing change detection, dataset preparation, and signal-processing-based sensing."
+        >
+          <div className="card-grid current-work-grid">
+            {ongoingResearch.map((item) => (
+              <ResearchCard key={item.title} item={item} />
+            ))}
+          </div>
+        </Section>
+
+        <Section
           id="publications"
-          eyebrow="Publications & Manuscripts"
-          title="Selected Research Outputs"
-          description="Compact summaries of accepted and ongoing work, with emphasis on contribution, evaluation setting, and public research profiles."
+          eyebrow="Publications"
+          title="Publications & Manuscripts"
+          description="Accepted and under-review research outputs."
           action={
             <ProfileLinks
               links={[profile.links.googleScholar]}
@@ -64,37 +76,24 @@ export default function HomePage() {
         </Section>
 
         <Section
-          id="ongoing-research"
-          eyebrow="Ongoing Research"
-          title="Current Directions"
-          description="Work currently being evaluated or developed for remote-sensing, signal processing, and field sensing applications."
-        >
-          <div className="stack-lg">
-            {ongoingResearch.map((item) => (
-              <article key={item.title} className="panel research-panel">
-                <div className="panel-heading">
-                  <div>
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
-                  </div>
-                  <span className="status-chip neutral">{item.status}</span>
-                </div>
-                <ul className="detail-list">
-                  {item.points.map((point) => (
-                    <li key={point}>{point}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </Section>
-
-        <Section
           id="projects"
           eyebrow="Selected Projects"
-          title="Research-Relevant Technical Projects"
-          description="A focused set of projects related to sensing, remote-sensing segmentation, change detection, and signal/image processing."
+          title="Selected Projects"
+          description="Research projects are listed above. This section includes other technical work kept in compact form."
+          action={
+            <ProfileLinks
+              links={[
+                {
+                  label: "View more on GitHub",
+                  href: "https://github.com/Dineth14",
+                },
+              ]}
+              variant="secondary"
+              compact
+            />
+          }
         >
+          <p className="placeholder-note">Research projects are listed above.</p>
           <div className="card-grid project-grid">
             {projects.map((project) => (
               <ProjectCard key={project.title} project={project} />
@@ -104,9 +103,9 @@ export default function HomePage() {
 
         <Section
           id="skills"
-          eyebrow="Technical Skills"
-          title="Methods, Tooling, and Experimental Workflow"
-          description="Grouped skills across programming, machine learning, remote sensing, signal processing, embedded systems, and research tooling."
+          eyebrow="Skills"
+          title="Skills"
+          description="Grouped technical skills and research tools."
         >
           <div className="card-grid skills-grid">
             {skillGroups.map((group) => (
@@ -117,46 +116,29 @@ export default function HomePage() {
 
         <Section
           id="awards"
-          eyebrow="Honors & Awards"
-          title="Academic Recognition and Competitions"
-          description="Selected academic prizes, examination results, and technical competition outcomes."
+          eyebrow="Awards"
+          title="Awards"
+          description="Selected academic prizes, examination results, and competition outcomes."
         >
           <AwardTimeline items={awards} />
         </Section>
 
         <Section
           id="cv"
-          eyebrow="CV & Research Profiles"
-          title="Research Materials and Profiles"
-          description="I am interested in research internship opportunities in computer vision, remote sensing, generative AI, medical imaging, signal processing, and embedded AI."
+          eyebrow="CV & Links"
+          title="CV & Research Links"
+          description="For research internship opportunities and collaborations, please refer to my CV and research profiles."
         >
           <div className="panel">
-            <ProfileLinks links={profile.profileSectionLinks} variant="primary" />
-          </div>
-        </Section>
-
-        <Section
-          id="leadership"
-          eyebrow="Leadership & Beyond Research"
-          title="Communication and Initiative"
-          description="A short view of communication practice and independent initiative beyond formal research work."
-        >
-          <div className="card-grid leadership-grid">
-            {leadershipItems.map((item) => (
-              <article key={item.title} className="panel">
-                <div className="eyebrow-label">{item.role}</div>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </article>
-            ))}
+            <ProfileLinks links={profile.profileSectionLinks} />
           </div>
         </Section>
 
         <Section
           id="contact"
           eyebrow="Contact"
-          title="Get in Touch"
-          description="The portfolio is designed for professor outreach, lab applications, and research internship communication."
+          title="Contact"
+          description="Direct contact information and research profiles."
         >
           <ContactCTA details={contactDetails} />
         </Section>

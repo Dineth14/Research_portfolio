@@ -10,7 +10,6 @@ export type ProfileContent = {
   name: string;
   headline: string;
   subheadline: string;
-  photoSrc: string;
   statusItems: string[];
   heroLinks: LinkItem[];
   profileSectionLinks: LinkItem[];
@@ -34,10 +33,21 @@ export type Publication = {
 export type Project = {
   title: string;
   category: string;
+  status: string;
   year?: string;
   description: string;
-  tech: string[];
+  tags: string[];
   links: LinkItem[];
+};
+
+export type ResearchItem = {
+  title: string;
+  typeLabel: string;
+  status: string;
+  description: string;
+  points: string[];
+  tags: string[];
+  metadata?: Array<{ label: string; value: string }>;
 };
 
 export type SkillGroup = {

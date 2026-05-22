@@ -47,7 +47,6 @@ export function PublicationCard({ publication }: PublicationCardProps) {
             Manuscript under review. Public links will be added when available.
           </span>
         )}
-        <span className="placeholder-note">BibTeX available on request.</span>
       </div>
     </article>
   );
