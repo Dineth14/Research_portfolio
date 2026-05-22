@@ -1,6 +1,7 @@
 import { ContactDetails, LinkItem, ProfileContent } from "@/types/portfolio";
 
-const basePath = process.env.NODE_ENV === "production" ? "/dineth-portfolio" : "";
+const repositorySlug = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "Research_portfolio";
+const basePath = process.env.NODE_ENV === "production" ? `/${repositorySlug}` : "";
 
 const links = {
   primaryCv: {
@@ -52,7 +53,7 @@ const links = {
   } satisfies LinkItem,
   portfolio: {
     label: "Portfolio",
-    href: "https://dineth14.github.io/dineth-portfolio/",
+    href: `https://dineth14.github.io/${repositorySlug}/`,
     variant: "secondary",
   } satisfies LinkItem,
 };
