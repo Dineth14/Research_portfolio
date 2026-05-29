@@ -63,6 +63,7 @@ export const profile: ProfileContent = {
   headline: "Electrical & Electronic Engineering Undergraduate",
   subheadline:
     "Research interests in computer vision, remote sensing, signal processing, generative AI, and medical imaging.",
+  photoSrc: `${basePath}/images/dineth-perera.jpg`,
   statusItems: [
     "University of Peradeniya",
     "GPA: 3.70/4.00",

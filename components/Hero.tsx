@@ -22,6 +22,17 @@ export function Hero({ profile }: HeroProps) {
             <ProfileLinks links={profile.heroLinks} />
           </div>
         </div>
+        {profile.photoSrc && (
+          <aside className="hero-aside" aria-label="Profile photo">
+            <div className="portrait-frame">
+              <img
+                src={profile.photoSrc}
+                alt={`Portrait of ${profile.name}`}
+                loading="eager"
+              />
+            </div>
+          </aside>
+        )}
       </div>
     </section>
   );

@@ -10,6 +10,7 @@ export type ProfileContent = {
   name: string;
   headline: string;
   subheadline: string;
+  photoSrc?: string;
   statusItems: string[];
   heroLinks: LinkItem[];
   profileSectionLinks: LinkItem[];

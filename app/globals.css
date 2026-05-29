@@ -109,7 +109,10 @@ main {
 }
 
 .hero-inner {
-  display: block;
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(240px, 320px);
+  gap: 32px;
+  align-items: center;
 }
 
 .hero-copy,
@@ -124,6 +127,33 @@ main {
   padding: 0;
   background: transparent;
   border: 0;
+}
+
+.hero-aside {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portrait-frame {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(24, 33, 27, 0.06);
+  border: 1px solid rgba(188, 196, 183, 0.65);
+  background: var(--surface-soft);
+}
+
+.portrait-frame img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portrait-frame:hover img {
+  transform: scale(1.03);
 }
 
 .hero-kicker,
