@@ -21,7 +21,6 @@ export const skillGroups: SkillGroup[] = [
   {
     title: "Remote Sensing",
     items: [
-      "Sentinel-2",
       "semantic segmentation",
       "change detection",
       "dataset preparation",
@@ -29,22 +28,10 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
-    title: "Signal Processing",
-    items: [
-      "FFT/PSD analysis",
-      "filtering",
-      "spectral features",
-      "vibration analysis",
-      "infrasound analysis",
-    ],
-  },
-  {
     title: "Tools",
     items: [
       "GitHub",
       "Hugging Face",
-      "Google Scholar",
-      "arXiv",
       "LaTeX",
     ],
   },
