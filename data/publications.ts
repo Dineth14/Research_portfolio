@@ -34,7 +34,7 @@ export const publications: Publication[] = [
       "MambaRefine-CD: MambaVision with Region-Boundary Temporal Refinement for Remote-Sensing Change Detection",
     venue: "Manuscript / Under Review, MERCon 2026",
     authors:
-      "Dineth Perera, Thaariq Firdous, Oshadha Samarakoon, Buddhi Wijenayake, Roshan Godaliyadda, Parakrama Ekanayake, Vijitha Herath",
+      "Dineth Perera, Thaariq Firdous, Oshadha Samarakoon, Roshan Godaliyadda, Parakrama Ekanayake, Vijitha Herath",
     contribution:
       "Developing the change detection architecture, experimental setup, and analysis.",
     description:
