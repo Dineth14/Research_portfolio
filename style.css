@@ -1,0 +1,110 @@
+/* Simple academic homepage. Edit colours and sizes here. */
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #222222;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 16.5px;
+  line-height: 1.6;
+}
+
+a { color: #1f5a94; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+p { margin: 0 0 0.8em; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 24px 30px;
+}
+
+/* ---------- top navigation ---------- */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dddddd;
+}
+.site-name { font-weight: 600; color: #222222; }
+nav a { margin-left: 18px; }
+nav a:first-child { margin-left: 0; }
+
+/* ---------- introduction ---------- */
+.intro {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 28px 0 10px;
+}
+h1 { margin: 0 0 6px; font-size: 33px; font-weight: 600; line-height: 1.2; }
+.affiliation { color: #666666; font-size: 15.5px; }
+.seeking { font-weight: 500; }
+.links { font-size: 15.5px; color: #666666; }
+
+.profile-photo {
+  flex: none;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+  background: #eeeeee;
+}
+
+/* ---------- sections ---------- */
+h2 {
+  margin: 38px 0 16px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #dddddd;
+  font-size: 24px;
+  font-weight: 600;
+}
+.subheading { margin: 20px 0 6px; font-size: 18px; font-weight: 600; }
+
+/* ---------- research ---------- */
+.research-item {
+  display: flex;
+  gap: 22px;
+  padding: 18px 0;
+  border-top: 1px solid #eeeeee;
+}
+.research-item:first-of-type { border-top: none; padding-top: 4px; }
+
+.research-thumbnail {
+  flex: none;
+  width: 160px;
+  height: 110px;
+  object-fit: cover;
+  background: #eeeeee;
+  border: 1px solid #dddddd;
+}
+.research-content h3 { margin: 0 0 4px; font-size: 19px; font-weight: 600; line-height: 1.35; }
+.status { margin-bottom: 6px; color: #666666; font-size: 14.5px; font-style: italic; }
+.item-links { margin-bottom: 0; font-size: 15.5px; }
+
+/* ---------- footer ---------- */
+footer {
+  margin-top: 40px;
+  padding-top: 12px;
+  border-top: 1px solid #dddddd;
+  color: #666666;
+  font-size: 13px;
+  text-align: center;
+}
+footer p { margin: 0 0 4px; }
+
+/* ---------- mobile ---------- */
+@media (max-width: 640px) {
+  .container { padding: 16px 16px 24px; }
+  h1 { font-size: 28px; }
+
+  .intro { flex-direction: column-reverse; gap: 16px; }
+  .profile-photo { width: 150px; height: 150px; }
+
+  .research-item { flex-direction: column; gap: 10px; }
+  .research-thumbnail { width: 100%; max-width: 320px; height: auto; aspect-ratio: 160 / 110; }
+}
